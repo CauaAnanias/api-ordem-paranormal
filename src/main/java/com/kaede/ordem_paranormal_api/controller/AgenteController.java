@@ -31,8 +31,8 @@ public class AgenteController {
     }
     
     // (A rota de GET pode ficar como estava antes, ou vamos arrumar depois. Foque no POST por enquanto!)
-    @GetMapping
-    public List<Agente> listarTodos() {
-        return service.listarTodos();
+    @GetMapping("/buscar")
+    public List<Agente> buscarPorClasse(@RequestParam String classe) {
+        return service.buscarPorClasse(classe);
     }
 }

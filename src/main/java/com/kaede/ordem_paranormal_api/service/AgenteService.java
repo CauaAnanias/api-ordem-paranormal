@@ -1,8 +1,11 @@
 package com.kaede.ordem_paranormal_api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import com.kaede.ordem_paranormal_api.model.Agente;
 import com.kaede.ordem_paranormal_api.repository.AgenteRepository;
 
@@ -51,6 +54,11 @@ public class AgenteService {
     
     public List<Agente> listarTodos() {
         return repository.findAll();
+    }
+     
+    @GetMapping("/buscar")
+    public List<Agente> buscarPorClasse(String classe) {
+        return repository.findByClasseIgnoreCase(classe);
     }
     
     private void calcularStatusBase(Agente agente) {
