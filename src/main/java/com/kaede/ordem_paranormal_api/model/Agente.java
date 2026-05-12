@@ -19,7 +19,7 @@ public class Agente {
     private int nex;           // Nível de Exposição Paranormal (Usando 'int' para o motor não quebrar)
     private Integer prestigio; // Pontos de prestígio
     
-    // Nossos Status Automáticos
+
     private int vidaMaxima;  
     private int sanidadeMaxima; // Corrigido para terminar com 'a'
     private int peMaximo;       // Subiu para ficar com os outros atributos

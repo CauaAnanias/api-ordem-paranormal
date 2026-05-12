@@ -20,17 +20,17 @@ public class AgenteController {
 	    service.deletarAgente(id);
 	}
 
-    // APAGAMOS O REPOSITORY DAQUI E COLOCAMOS O SERVICE!
+
     @Autowired
     private AgenteService service;
 
     @PostMapping
     public Agente criarAgente(@RequestBody Agente agente) {
-        // Agora o Controller manda pro Service validar a regra!
+
         return service.salvarFicha(agente);
     }
     
-    // (A rota de GET pode ficar como estava antes, ou vamos arrumar depois. Foque no POST por enquanto!)
+
     @GetMapping("/buscar")
     public List<Agente> buscarPorClasse(@RequestParam String classe) {
         return service.buscarPorClasse(classe);
